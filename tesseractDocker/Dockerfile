@@ -12,25 +12,25 @@ RUN java -version
 RUN apt-get install -y build-essential
 
 
-RUN mkdir /opencv && \
-    cd /opencv && \
-    git clone https://github.com/opencv/opencv.git && \
-    cd opencv && \
-    git checkout 4.3.0
+#RUN mkdir /opencv && \
+ #   cd /opencv && \
+  #  git clone https://github.com/opencv/opencv.git && \
+   # cd opencv && \
+    #git checkout 4.3.0
 
-RUN cd /opencv/opencv && \
-    mkdir build && \
-    cd build && \
-    cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local .. && \
-    make -j$(nproc) && \
-    make install
+#RUN cd /opencv/opencv && \
+ #   mkdir build && \
+  #  cd build && \
+   # cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local .. && \
+    #make -j$(nproc) && \
+    #make install
 
 
 # Set the Java classpath for OpenCV
-ENV CLASSPATH /usr/local/share/java/opencv4
+#ENV CLASSPATH /usr/local/share/java/opencv4
 
 # Verify OpenCV installation
-RUN java -cp $CLASSPATH -XshowSettings:properties -version
+#RUN java -cp $CLASSPATH -XshowSettings:properties -version
 
 RUN apt-get install -y \
     m4 \
