@@ -27,3 +27,13 @@ stages:
         dockerfile: '$(Build.SourcesDirectory)/tesseractDocker/Dockerfile'
         tags: |
           $(tag)
+
+    - task: ECRPushImage@1
+      inputs:
+        awsCredentials: 'awsCredentialsADCB'
+        regionName: 'me-central-1'
+        imageSource: 'imagename'
+        sourceImageName: '908049645973.dkr.ecr.me-central-1.amazonaws.com/eks-sit1-ecr01'
+        sourceImageTag: $(Build.BuildId)
+        pushTag: $(Build.BuildId)
+        repositoryName: 'eks-sit1-ecr01'
