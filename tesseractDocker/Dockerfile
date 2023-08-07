@@ -41,16 +41,16 @@ RUN apt-get install -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-RUN wget https://github.com/DanBloomberg/leptonica/releases/download/1.82.0/leptonica-1.82.0.tar.gz \
-    && tar -zxvf leptonica-1.82.0.tar.gz \
-    && cd leptonica-1.82.0 \
-    && ./autogen.sh \
-    && ./configure \
-    && make \
-    && make install \
-    && ldconfig \
-    && cd .. \
-    && rm -rf leptonica-1.82.0 leptonica-1.82.0.tar.gz
+#RUN wget https://github.com/DanBloomberg/leptonica/releases/download/1.82.0/leptonica-1.82.0.tar.gz \
+ #   && tar -zxvf leptonica-1.82.0.tar.gz \
+  #  && cd leptonica-1.82.0 \
+   # && ./autogen.sh \
+    #&& ./configure \
+    #&& make \
+    #&& make install \
+    #&& ldconfig \
+    #&& cd .. \
+    #&& rm -rf leptonica-1.82.0 leptonica-1.82.0.tar.gz
 
 RUN wget https://github.com/tesseract-ocr/tesseract/archive/refs/tags/5.2.0.tar.gz \
     && tar -zxvf 5.2.0.tar.gz \
