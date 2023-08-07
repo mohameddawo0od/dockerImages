@@ -52,16 +52,16 @@ RUN apt-get install -y \
     #&& cd .. \
     #&& rm -rf leptonica-1.82.0 leptonica-1.82.0.tar.gz
 
-RUN wget https://github.com/tesseract-ocr/tesseract/archive/refs/tags/5.2.0.tar.gz \
-    && tar -zxvf 5.2.0.tar.gz \
-    && cd tesseract-5.2.0 \
-    && ./autogen.sh \
-    && ./configure \
-    && make \
-    && make install \
-    && ldconfig \
-    && cd ../.. \
-    && rm -rf tesseract-5.2.0 5.2.0.tar.gz
+#RUN wget https://github.com/tesseract-ocr/tesseract/archive/refs/tags/5.2.0.tar.gz \
+ #   && tar -zxvf 5.2.0.tar.gz \
+ #   && cd tesseract-5.2.0 \
+ #   && ./autogen.sh \
+ #   && ./configure \
+  #  && make \
+  #  && make install \
+   # && ldconfig \
+   # && cd ../.. \
+   # && rm -rf tesseract-5.2.0 5.2.0.tar.gz
 
 
 RUN mkdir -p /usr/local/share/tessdata/
