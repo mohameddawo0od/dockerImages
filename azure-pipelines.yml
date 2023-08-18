@@ -18,7 +18,8 @@ stages:
   - job: Build
     displayName: Build
     pool:
-      vmImage: ubuntu-latest
+      name: Docker-AgentPool 
+      #vmImage: ubuntu-latest
     steps:
     - task: CmdLine@2
       inputs:
