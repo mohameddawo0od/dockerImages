@@ -21,6 +21,9 @@ stages:
       name: Docker-AgentPool 
       #vmImage: ubuntu-latest
     steps:
+    - task: CmdLine@2
+      inputs:
+        script: 'aws ecr get-login-password --region me-central-1 | docker login --username AWS --password-stdin 908049645973.dkr.ecr.me-central-1.amazonaws.com'
     - task: ECRPullImage@1
       inputs:
         awsCredentials: 'awsCredentialsADCB'
@@ -28,9 +31,6 @@ stages:
         repository: 'eks-sit1-ecr01'
         imageSource: 'imagetag'
         imageTag: '486'
-    - task: CmdLine@2
-      inputs:
-        script: 'aws ecr get-login-password --region me-central-1 | docker login --username AWS --password-stdin 908049645973.dkr.ecr.me-central-1.amazonaws.com'
     - task: Docker@2
       displayName: Build an image
       inputs:
