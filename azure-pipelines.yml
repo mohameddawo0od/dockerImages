@@ -25,6 +25,13 @@ stages:
     - task: CmdLine@2
       inputs:
         script: 'aws ecr get-login-password --region me-central-1 | docker login --username AWS --password-stdin 908049645973.dkr.ecr.me-central-1.amazonaws.com'
+    - task: S3Upload@1
+      inputs:
+        awsCredentials: 'awsCredentialsADCB'
+        regionName: 'me-central-1'
+        bucketName: 'eks-sit1-cicd-s3'
+        sourceFolder: '$(Build.SourcesDirectory)/tesseractDocker'
+        globExpressions: 'Dockerfile'
     - task: ECRPullImage@1
       inputs:
         awsCredentials: 'awsCredentialsADCB'
