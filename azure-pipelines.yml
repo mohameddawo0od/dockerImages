@@ -22,9 +22,9 @@ stages:
       #name: Docker-AgentPool 
       vmImage: ubuntu-latest
     steps:
-    #- task: CmdLine@2
-     # inputs:
-      #  script: 'aws ecr get-login-password --region me-central-1 | docker login --username AWS --password-stdin 908049645973.dkr.ecr.me-central-1.amazonaws.com'
+    - task: CmdLine@2
+      inputs:
+        script: 'aws ecr get-login-password --region me-central-1 | docker login --username AWS --password-stdin 908049645973.dkr.ecr.me-central-1.amazonaws.com'
     - task: S3Upload@1
       inputs:
         awsCredentials: 'awsCredentialsADCB'
