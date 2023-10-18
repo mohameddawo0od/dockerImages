@@ -68,9 +68,9 @@ RUN mkdir -p /usr/local/share/tessdata/
 
 # Download e13b language data
 RUN wget -O /usr/local/share/tessdata/e13b.traineddata \
-    https://github.com/DoubangoTelecom/tesseractMICR/tree/master/tessdata_best/e13b.traineddata
+    https://github.com/DoubangoTelecom/tesseractMICR/raw/master/tessdata_best/e13b.traineddata
 
 # Download ocr_int language data
 RUN wget -O /usr/local/share/tessdata/ocrb_int.traineddata \
-    https://github.com/Shreeshrii/tessdata_ocrb/blob/master/ocrb_int.traineddata
+    https://github.com/Shreeshrii/tessdata_ocrb/raw/master/ocrb_int.traineddata
 
