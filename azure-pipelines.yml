@@ -24,6 +24,12 @@ stages:
     steps:
     - task: CmdLine@2
       inputs:
+        script: |
+          export AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
+          export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+          export AWS_DEFAULT_REGION=me-central-1
+    - task: CmdLine@2
+      inputs:
         script: 'aws ecr get-login-password --region me-central-1 | docker login --username AWS --password-stdin 908049645973.dkr.ecr.me-central-1.amazonaws.com'
     
     - task: Docker@2
